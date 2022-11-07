@@ -16,7 +16,7 @@ public class MenuManager : MonoBehaviour
     {
         GameManager.GetInstance().LoadData();
         //nameDisplay.text = GameManager.GetInstance().GetBestName();
-        bestScoreText.text = "Best Score:\n"+GameManager.GetInstance().GetBestName()+" : "+GameManager.GetInstance().GetBestScore()+" ";
+        bestScoreText.text = $"Best Score:\n{GameManager.GetInstance().GetBestName()} : {GameManager.GetInstance().GetBestScore()}";
     }
 
     private void Update()

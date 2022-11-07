@@ -416,7 +416,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 150, y: 80}
-  m_SizeDelta: {x: 300, y: 60}
+  m_SizeDelta: {x: 300, y: 104.3369}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &188020406
 MonoBehaviour:
@@ -451,7 +451,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Score : 0'
+  m_Text: 'Name : newName
+
+    Score : 0'
 --- !u!222 &188020407
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -504,11 +506,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d110623a642692246a42fbc2d8d89884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BrickPrefab: {fileID: 897975713663390409, guid: 63f25b9733d2bcd4fa2ff6de1264c739, type: 3}
-  LineCount: 6
-  Ball: {fileID: 177912862}
-  ScoreText: {fileID: 188020406}
-  GameOverText: {fileID: 474497238}
+  brickPrefab: {fileID: 0}
+  lineCount: 6
+  ball: {fileID: 0}
+  bestScoreText: {fileID: 0}
+  scoreText: {fileID: 0}
+  gameOverText: {fileID: 0}
 --- !u!1 &455529321
 GameObject:
   m_ObjectHideFlags: 0
@@ -776,6 +779,50 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!1 &838621099
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 838621101}
+  - component: {fileID: 838621100}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &838621100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 838621099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e461ff1ed942234096f604290934ae5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &838621101
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 838621099}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 291.13232, y: 202.4121, z: -1.5434526}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &850602367
 GameObject:
   m_ObjectHideFlags: 0
@@ -1339,7 +1386,7 @@ GameObject:
   - component: {fileID: 2078529057}
   - component: {fileID: 2078529056}
   m_Layer: 5
-  m_Name: ScoreText (1)
+  m_Name: BestScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1398,7 +1445,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Best Score: \nName : 0 "
+  m_Text: 'Best Score:
+
+    Name : 0'
 --- !u!222 &2078529057
 CanvasRenderer:
   m_ObjectHideFlags: 0

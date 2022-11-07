@@ -36,8 +36,8 @@ public class MainManager : MonoBehaviour
             }
         }
 
-        bestScoreText.text = "Best Score:/n" + GameManager.GetInstance().GetBestName() + " : " +
-                             GameManager.GetInstance().GetBestScore();
+        bestScoreText.text = $"Best Score:/n{GameManager.GetInstance().GetBestName()} : {GameManager.GetInstance().GetBestScore()}";
+        scoreText.text = $"Name : {GameManager.GetInstance().GetName()}/nScore : 0";
     }
 
     private void Update()
@@ -67,7 +67,7 @@ public class MainManager : MonoBehaviour
     private void AddPoint(int point)
     {
         _mPoints += point;
-        scoreText.text = $"Score : {_mPoints}";
+        scoreText.text = $"Name : {GameManager.GetInstance().GetName()}/nScore : {_mPoints}";
     }
 
     public void GameOver()
