@@ -10,6 +10,7 @@ public class MainManager : MonoBehaviour
 
     public Text bestScoreText;
     public Text scoreText;
+    private string _playerName = "NewName";
     public GameObject gameOverText;
     
     private bool _mStarted;
@@ -36,8 +37,9 @@ public class MainManager : MonoBehaviour
             }
         }
 
-        bestScoreText.text = $"Best Score:/n{GameManager.GetInstance().GetBestName()} : {GameManager.GetInstance().GetBestScore()}";
-        scoreText.text = $"Name : {GameManager.GetInstance().GetName()}/nScore : 0";
+        bestScoreText.text = $"Best Score:\n{GameManager.GetInstance().GetBestName()} : {GameManager.GetInstance().GetBestScore()}";
+        _playerName = GameManager.GetInstance().GetName();
+        scoreText.text = $"Name : {_playerName}\nScore : 0";
     }
 
     private void Update()
@@ -57,6 +59,11 @@ public class MainManager : MonoBehaviour
         }
         else if (_mGameOver)
         {
+            if (_mPoints > GameManager.GetInstance().GetBestScore())
+            {
+                GameManager.GetInstance().SetBestScore(_mPoints);
+                GameManager.GetInstance().SaveBestData();
+            }
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -67,7 +74,7 @@ public class MainManager : MonoBehaviour
     private void AddPoint(int point)
     {
         _mPoints += point;
-        scoreText.text = $"Name : {GameManager.GetInstance().GetName()}/nScore : {_mPoints}";
+        scoreText.text = $"Name : {_playerName}\nScore : {_mPoints}";
     }
 
     public void GameOver()

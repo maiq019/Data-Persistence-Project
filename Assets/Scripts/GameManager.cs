@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour
         if (!File.Exists(path)) return;
         var json = File.ReadAllText(path);
         var data = JsonUtility.FromJson<SavedData>(json);
-        _name = data.name;
+        _bestName = data.name;
         _bestScore = data.bestScore;
     }
 }
